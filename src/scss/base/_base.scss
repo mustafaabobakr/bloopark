@@ -1,0 +1,132 @@
+// Base
+$debug: false;
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	background-repeat: no-repeat;
+	/* projects that use icons. It doesn't affect much on most layouts I tried applying it on, as it only really comes up when inline or inline-block elements line up with each other on the same line. */
+	vertical-align: middle;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+	-webkit-font-smoothing: antialiased;
+	@if ($debug == true) {
+		outline: 1px solid red;
+	}
+}
+html {
+	scroll-behavior: smooth;
+	/* defines 1 rem = 62.5% of browser default rem which is 16px
+  this leads to 1 rem = 62.5% of 16px = 10px
+  to could make every font and size with rem
+  and this is for easy responsive */
+	font-size: 62.5% !important;
+	@include respond(big-desktop) {
+		font-size: 75% !important; //want: 1rem = 12px, 12/16px(base) = 75%
+	}
+	@include respond(tab-land) {
+		font-size: 56.25% !important; //want: 1rem = 9px, 9/16px(base) = 56.25%
+	}
+	@include respond(tab-port) {
+		font-size: 50% !important; //want: 1rem = 8px, 8/16px(base) = 50%
+	}
+	// https://zellwk.com/blog/viewport-based-typography/
+	// font-size: 118.75%;
+	// line-height: 1.4;
+	// @include media(min, 640) {
+	//   font-size: 125%;
+	//   line-height: 1.4;
+	// }
+
+	// @include media(min, 900) {
+	//   font-size: 131.25%;
+	// }
+
+	// @include media(min, 1100) {
+	//   font-size: 137.5%;
+	// }
+
+	// @include media(min, 1800) {
+	//   font-size: 156.25%;
+	// }
+
+	// @include media(min, 2800) {
+	//   font-size: 175%;
+	// }
+}
+
+body {
+	box-sizing: border-box;
+	// for printing firfox
+	color-adjust: exact !important;
+	// for printing chrome
+	-webkit-print-color-adjust: exact !important;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	font-size: 1.6rem;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #343434;
+	font-family: $fontPrimary;
+}
+// When assigning fonts to the whole document, they won’t be applied to elements
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+}
+fieldset {
+	border: none;
+}
+main {
+	background: #fff;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: underline;
+	color: $yellow;
+}
+
+img {
+	@extend %userselect;
+	object-fit: cover;
+}
+
+button {
+	@extend %appearance;
+	@extend %userselect;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	&:focus {
+		outline: none;
+	}
+}
+::selection {
+	color: #fff;
+	background: $green-1;
+}
+
+::placeholder {
+	color: $gray-3;
+	font-weight: 400 !important;
+}
+
+// prevent events propagating to children
+a,
+button,
+label,
+select {
+	> * {
+		pointer-events: none;
+	}
+}
+// Base end--------------------

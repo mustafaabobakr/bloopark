@@ -1,0 +1,16 @@
+.main {
+	padding: 10px 36px 30px 36px;
+}
+
+@include media(min, 600) {
+	.header-link {
+		margin: unset !important;
+	}
+	.main {
+		display: flex;
+		justify-content: center;
+	}
+	.container {
+		max-width: 900px;
+	}
+}

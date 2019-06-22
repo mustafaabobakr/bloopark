@@ -1,0 +1,41 @@
+// EXTENDS
+.noaction {
+	cursor: default !important;
+	pointer-events: none !important;
+	color: grey !important;
+}
+.error {
+	color: $error !important;
+}
+.error-border {
+	border-color: $error !important;
+}
+%userselect {
+	-webkit-user-select: none !important;
+	-moz-user-select: none !important;
+	-ms-user-select: none !important;
+	user-select: none !important;
+}
+%appearance {
+	-webkit-appearance: none !important;
+	-moz-appearance: none !important;
+	-ms-appearance: none !important;
+	-o-appearance: none !important;
+	appearance: none !important;
+}
+%overflow {
+	overflow-x: auto !important;
+	overflow-y: auto !important;
+	white-space: nowrap;
+}
+%overflowx {
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+	white-space: nowrap;
+}
+%overflowy {
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	white-space: nowrap;
+}
+// addClass end

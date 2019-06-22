@@ -1,0 +1,25 @@
+// typography
+
+.gretting {
+	margin-bottom: 27px;
+	&__name {
+		font-size: 2rem;
+		font-weight: 300;
+		color: $green-2;
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: -10px;
+			left: 3px;
+			width: 90%;
+			height: 5px;
+			background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTIgOC43OCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiNmZGNjNDc7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjNweDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkFzc2V0IDI8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8xLTIiIGRhdGEtbmFtZT0iTGF5ZXIgMSI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMS41LDcuMjhjNDctMTMsMTA5LDAsMTA5LDAiLz48L2c+PC9nPjwvc3ZnPg==);
+		}
+	}
+	&__text {
+		margin-top: 20px;
+		font-size: 1.6rem;
+		color: $gray-1;
+	}
+}

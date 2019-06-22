@@ -1,0 +1,23 @@
+/* footer */
+.footer {
+	overflow: hidden;
+	padding: 50px 36px;
+	background: $green-3;
+	color: #fff;
+	text-align: center;
+	&-head {
+		letter-spacing: 4px;
+		font-size: 3.6rem;
+		span {
+			font-size: 1.7rem;
+			letter-spacing: 1px;
+			font-weight: 200;
+			display: block;
+		}
+	}
+	&-bottom {
+		font-size: 1.6rem;
+	}
+}
+
+/* /footer end-------------------------------------- */

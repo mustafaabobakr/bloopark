@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*/bootstrap.min.css": true,
+    "**/*/bootstrap.css": true,
+    "**/node_modules/*/**": true,
+    "**/settings.json": true,
+    "defaultsettings/6/settings.json": true,
+    "node_modules": true
+  }
+}

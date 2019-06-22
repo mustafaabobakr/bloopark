@@ -1,0 +1,25 @@
+.dropdown-menu,
+.questionMove {
+  z-index: var(zDropdown);
+}
+
+.modal {
+  z-index: var(zModal);
+  .dropdown-menu {
+    z-index: 9999999;
+  }
+  .list-group {
+    z-index: 100;
+    .active:after {
+      z-index: 100000;
+    }
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  z-index: 1000;
+  &:checked::after {
+    z-index: 100;
+  }
+}
