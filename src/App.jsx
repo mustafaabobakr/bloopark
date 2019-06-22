@@ -95,7 +95,7 @@ class App extends Component {
 								id="email"
 								type="email"
 								name="email"
-								className={this.state.email !== null && this.state.email !== "" ? "notempty form-control__input":"form-control__input"}
+								className={this.state.email !== null && this.state.email !== "" ? "notempty form-control__input error-border":"form-control__input"}
 								value ={this.state.email}
 								noValidate
 								onChange ={this.handleInputChange}
@@ -112,7 +112,7 @@ class App extends Component {
 								id="password"
 								type={this.state.showPass === true ? "text": "password"}
 								name="password"
-                className={this.state.password !== null && this.state.password !== "" ? "notempty form-control__input":"form-control__input"}
+                className={this.state.password !== null && this.state.password !== "" ? "notempty form-control__input error-border":"form-control__input"}
 								value={this.state.password}
 								noValidate
 								onChange={this.handleInputChange}
@@ -131,11 +131,12 @@ class App extends Component {
 								<FontAwesomeIcon icon={this.state.showPassIcon} />
 							</button>
 						</fieldset>
+            <span className="error__span error ">Please check your email address or your password</span>
 						<button
 							type="submit"
 							id="submit"
 							className=""
-              className={this.state.email !== null && this.state.email !== "" || this.state.password !== null && this.state.password !== "" ? "form-control__btn active":"form-control__btn"}
+              className={this.state.email !== null && this.state.email !== "" || this.state.password !== null && this.state.password !== "" ? "form-control__btn active ":"form-control__btn"}
 							>
 							Login
 						</button>
