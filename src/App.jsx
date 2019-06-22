@@ -4,15 +4,6 @@ import Logo from "./logo.png";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const formValid = formErrors => {
-  let valid = true;
-
-  Object.values(formErrors).forEach(val => {
-    // if value length > 0
-    val.length > 0 && (valid= false);
-  })
-  return valid;
-}
 
 class App extends Component {
 	constructor(props) {
@@ -22,20 +13,21 @@ class App extends Component {
       password: null,
       showPass: false,
       showPassIcon: faEye,
-      formErrors: {
-        email:"",
-        password:""
-      }
-		};
+    };
+    // these refs to change class on submitting to be .error and .error-border
+    this.emailInput = React.createRef();
+    this.passwordInput = React.createRef();
+    this.errorSpan = React.createRef();
   }
-  labelClicked = ev => {
-    this.textInput.focus();
-  }
+
 	handleInputChange = ev => {
     // prevent default submitting
     ev.preventDefault();
+    // remove errors
+    this.emailInput.current.classList.remove('error-border');
+    this.passwordInput.current.classList.remove('error-border');
+    this.errorSpan.current.classList.add('d-none');
     const { name, value } = ev.target;
-    let formErrors = this.state.formErrors;
     this.setState({
       [name]: value
     })
@@ -52,17 +44,9 @@ class App extends Component {
 	handleSubmit = ev => {
     // prevent default submitting
     ev.preventDefault();
-
-    if (formValid(this.state.formErrors)) {
-      console.log(`
-      --SUBMITTING--
-      email: ${this.state.email}
-      password: ${this.state.password}`);
-    } else {
-      // toggle error massege
-      console.error('NOPE INVALID')
-    }
-
+    this.emailInput.current.classList.add('error-border');
+    this.passwordInput.current.classList.add('error-border');
+    this.errorSpan.current.classList.remove('d-none');
 	}
 	render() {
 		return (
@@ -95,10 +79,11 @@ class App extends Component {
 								id="email"
 								type="email"
 								name="email"
-								className={this.state.email !== null && this.state.email !== "" ? "notempty form-control__input error-border":"form-control__input"}
+								className={this.state.email !== null && this.state.email !== "" ? "notempty form-control__input":"form-control__input"}
 								value ={this.state.email}
 								noValidate
 								onChange ={this.handleInputChange}
+                ref={this.emailInput}
 							/>
 							<label
                 htmlFor="email"
@@ -112,10 +97,12 @@ class App extends Component {
 								id="password"
 								type={this.state.showPass === true ? "text": "password"}
 								name="password"
-                className={this.state.password !== null && this.state.password !== "" ? "notempty form-control__input error-border":"form-control__input"}
+                className={this.state.password !== null && this.state.password !== "" ? "notempty form-control__input":"form-control__input"}
 								value={this.state.password}
 								noValidate
 								onChange={this.handleInputChange}
+                ref={this.passwordInput}
+
 							/>
 							<label
                 htmlFor="password"
@@ -131,12 +118,14 @@ class App extends Component {
 								<FontAwesomeIcon icon={this.state.showPassIcon} />
 							</button>
 						</fieldset>
-            <span className="error__span error ">Please check your email address or your password</span>
+            <span
+            className="error__span error d-none"
+            ref={this.errorSpan}
+            >Please check your email address or your password</span>
 						<button
 							type="submit"
 							id="submit"
-							className=""
-              className={this.state.email !== null && this.state.email !== "" || this.state.password !== null && this.state.password !== "" ? "form-control__btn active ":"form-control__btn"}
+              className={this.state.email !== null && this.state.email !== "" || this.state.password !== null && this.state.password !== "" ? "form-control__btn active":"form-control__btn"}
 							>
 							Login
 						</button>
