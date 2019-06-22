@@ -14,7 +14,11 @@ class App extends Component {
       showPass: false,
       showPassIcon: faEye,
     };
-    // these refs to change class on submitting to be .error and .error-border
+    // these refs to :
+    // [change class on submitting to be .error and .error-border] and,
+    // [remove d-none of errorSpan]
+    this.labelEmail = React.createRef();
+    this.labelPassword = React.createRef();
     this.emailInput = React.createRef();
     this.passwordInput = React.createRef();
     this.errorSpan = React.createRef();
@@ -27,6 +31,9 @@ class App extends Component {
     this.emailInput.current.classList.remove('error-border');
     this.passwordInput.current.classList.remove('error-border');
     this.errorSpan.current.classList.add('d-none');
+    this.labelEmail.current.classList.remove('error');
+    this.labelPassword.current.classList.remove('error');
+
     const { name, value } = ev.target;
     this.setState({
       [name]: value
@@ -44,9 +51,12 @@ class App extends Component {
 	handleSubmit = ev => {
     // prevent default submitting
     ev.preventDefault();
+    // show error
     this.emailInput.current.classList.add('error-border');
     this.passwordInput.current.classList.add('error-border');
     this.errorSpan.current.classList.remove('d-none');
+    this.labelEmail.current.classList.add('error');
+    this.labelPassword.current.classList.add('error');
 	}
 	render() {
 		return (
@@ -88,6 +98,7 @@ class App extends Component {
 							<label
                 htmlFor="email"
                 className="form-control__label"
+                ref={this.labelEmail}
                 >
 								Email address
 							</label>
@@ -107,6 +118,7 @@ class App extends Component {
 							<label
                 htmlFor="password"
                 className="form-control__label"
+                ref={this.labelPassword}
                 >
 								Password
 							</label>
