@@ -1,15 +1,14 @@
 {
-  "main.css": "/bloopark/static/css/main.db5d54b3.chunk.css",
-  "main.js": "/bloopark/static/js/main.f7b52a52.chunk.js",
-  "main.js.map": "/bloopark/static/js/main.f7b52a52.chunk.js.map",
+  "main.css": "/bloopark/static/css/main.952c2a31.chunk.css",
+  "main.js": "/bloopark/static/js/main.de018f81.chunk.js",
+  "main.js.map": "/bloopark/static/js/main.de018f81.chunk.js.map",
   "runtime~main.js": "/bloopark/static/js/runtime~main.f4ec18f8.js",
   "runtime~main.js.map": "/bloopark/static/js/runtime~main.f4ec18f8.js.map",
   "static/js/2.8ea13731.chunk.js": "/bloopark/static/js/2.8ea13731.chunk.js",
   "static/js/2.8ea13731.chunk.js.map": "/bloopark/static/js/2.8ea13731.chunk.js.map",
   "index.html": "/bloopark/index.html",
-  "precache-manifest.cccc0233335e00196ae2a3480f49883c.js": "/bloopark/precache-manifest.cccc0233335e00196ae2a3480f49883c.js",
+  "precache-manifest.ee6d7ce04ca9bd7713b550371eb1bf0d.js": "/bloopark/precache-manifest.ee6d7ce04ca9bd7713b550371eb1bf0d.js",
   "service-worker.js": "/bloopark/service-worker.js",
-  "static/css/main.db5d54b3.chunk.css.map": "/bloopark/static/css/main.db5d54b3.chunk.css.map",
-  "static/media/logo.png": "/bloopark/static/media/logo.ffe5568c.png",
-  "static/media/index.scss": "/bloopark/static/media/swatch.f37c1fc6.svg"
+  "static/css/main.952c2a31.chunk.css.map": "/bloopark/static/css/main.952c2a31.chunk.css.map",
+  "static/media/logo.png": "/bloopark/static/media/logo.ffe5568c.png"
 }
